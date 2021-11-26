@@ -17,10 +17,10 @@ public:
     time_t timeCreate;
     string name;
     string description;
-    int dueTo;
+    time_t dueTo;
     TaskStatus status = ACTIVE;
 
-    Task(string n, string d, int dT);
+    Task(string n, string d, int days, int h, int m, int s);
 
     string display();
 };

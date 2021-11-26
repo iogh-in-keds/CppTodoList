@@ -3,7 +3,7 @@
 
 int main() {
     TodoList list;
-    Task testTask("TEST NAME", "TEST DESCRIPTION", 0);
+    Task testTask("TEST NAME", "TEST DESCRIPTION", 5, 13, 5, 0);
 
     list.addTask(testTask);
     list.completeTask(testTask);
@@ -11,11 +11,10 @@ int main() {
 //    {
 //        cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
 //    }
-
     auto resultList = list.resolvedTasks();
 
     for (auto resultTask: resultList) {
-        cout << resultTask.display();
+        cout << resultTask.display() << '\n';
     }
     return 0;
 }

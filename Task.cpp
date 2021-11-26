@@ -4,20 +4,22 @@
 #include "Task.h"
 #include <utility>
 #include <ctime>
+#include <iostream>
 
 using namespace std;
 
 string Task::display() {
     return "name: " + name +
            "\ndescription: " + description +
-           "\ndueTo: " + to_string(dueTo) +
-           "\nTaskStatus: "  + (status == 0 ? "ACTIVE" : "RESOLVED")
-           + "\nCreation Time " + asctime(localtime(&timeCreate));
+           "\ndueTo: " + asctime(localtime(&dueTo)) +
+           "TaskStatus: "  + (status == 0 ? "ACTIVE" : "RESOLVED")
+           + "\nCreation Time: " + asctime(localtime(&timeCreate));
 }
 
-Task::Task(string n, string d, int dT) {
+Task::Task(string n, string d, int days, int h, int m, int s) {
     name = std::move(n);
     description = std::move(d);
-    dueTo = dT;
     time(&timeCreate);
+    dueTo = timeCreate - timeCreate % 86400 + days * 86400 + (h - 3) * 3600 + m * 60 + s;
+
 }
