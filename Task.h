@@ -5,7 +5,7 @@
 #ifndef UNTITLED_TASK_H
 #define UNTITLED_TASK_H
 
-#include<string>
+#include <string>
 #include "TaskStatus.h"
 
 using namespace std;
