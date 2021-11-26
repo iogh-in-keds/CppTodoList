@@ -3,11 +3,7 @@
 
 int main() {
     TodoList list;
-    Task testTask;
-
-    testTask.name = "TEST NAME";
-    testTask.description = "TEST DESCRIPTION";
-    testTask.dueTo = 0;
+    Task testTask("TEST NAME", "TEST DESCRIPTION", 0);
 
     list.addTask(testTask);
     list.completeTask(testTask);
