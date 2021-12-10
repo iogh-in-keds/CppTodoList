@@ -19,6 +19,7 @@ public:
     vector<Task> activeTasks();
 
     vector<Task> resolvedTasks();
+    Task& operator[] (const int index);
 
 };
 

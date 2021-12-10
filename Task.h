@@ -23,6 +23,10 @@ public:
     Task(string n, string d, int days, int h, int m, int s);
 
     string display();
+
+    Task& operator+ (int a);
+    Task& operator+= (int a);
 };
+std::ostream& operator<< (std::ostream& stream, Task task);
 
 #endif //UNTITLED_TASK_H

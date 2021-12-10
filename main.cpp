@@ -13,8 +13,10 @@ int main() {
 //    }
     auto resultList = list.resolvedTasks();
 
+    resultList[0] += 5;
+
     for (auto resultTask: resultList) {
-        cout << resultTask.display() << '\n';
+        cout << resultTask << '\n';
     }
     return 0;
 }

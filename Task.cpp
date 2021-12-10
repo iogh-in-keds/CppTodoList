@@ -25,3 +25,18 @@ Task::Task(string n, string d, int days, int h, int m, int s) {
     dueTo = timeCreate - timeCreate % 86400 + days * 86400 + (h - 3) * 3600 + m * 60 + s;
 
 }
+
+Task &Task::operator+(int a) {
+    dueTo += a * 86400;
+    return *this;
+}
+
+Task &Task::operator+=(int a) {
+    dueTo += a * 86400;
+    return *this;
+}
+
+std::ostream &operator<<(ostream &stream, Task task) {
+    stream << task.display();
+    return stream;
+}
