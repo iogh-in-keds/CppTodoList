@@ -9,11 +9,13 @@
 using namespace std;
 
 string Task::display() {
+    string a = asctime(localtime(&dueTo));
+    string b = asctime(localtime(&timeCreate));
     return "name: " + name +
            "\ndescription: " + description +
-           "\ndueTo: " + asctime(localtime(&dueTo)) +
+           "\ndueTo: " + a +
            "TaskStatus: "  + (status == 0 ? "ACTIVE" : "RESOLVED")
-           + "\nCreation Time: " + asctime(localtime(&timeCreate));
+           + "\nCreation Time: " + b;
 }
 
 Task::Task(string n, string d, int days, int h, int m, int s) {
